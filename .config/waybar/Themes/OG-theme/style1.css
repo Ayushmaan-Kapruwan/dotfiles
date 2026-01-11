@@ -1,0 +1,157 @@
+@import url("colors-waybar.css");
+
+* {
+    min-height: 14px;
+    background-color: transparent;
+    font-family: "CaskaydiaCove Nerd Font Mono" , monospace/*, "SF Pro Display";*/;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3 3 3 3; /* up right down left*/
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+window#waybar {
+    background-color: rgba(11, 25, 20 ,0.7);
+    padding: 0;
+    margin: 0;
+    border: 2px solid @color6;
+    min-height: 14px;
+    border-radius: 5px;
+}
+
+.module { 
+	padding: 5 5 5 5;
+	background-color: transparent; 
+	border: 2px solid @color6;
+	border-radius: 5px;
+	margin: 0 4px;
+}
+
+#clock,
+#custom-power,
+#network,
+#bluetooth,
+#custom-astrill {
+	color: @color6;
+}
+
+#workspaces,
+#battery,
+#wireplumber {
+	color: @color6;
+}
+
+#wireplumber.muted {
+	color: #f7276b;
+}
+#custom-brightness {
+	color: @color6;
+}
+#custom-controlpanel
+
+/*power.menu*/
+/*#pulseaudio,*/
+/*mic.toggle*/
+/*vpn*/
+/*brightness*/
+#backlight,
+/*#network.speed,*/
+/*#temperature.gpu,*/
+/*#custom-cava,*/
+/*#cpu,*/
+/*#memory,*/
+
+/*#custom-power {
+    background: @background;
+    color: @foreground;
+    padding: 6px 8px;
+    margin: 0 2px;
+    border-radius: 0px;
+}*/
+
+#workspaces {
+	background: @color6;
+	border-radius: 8px;
+	padding: 0;
+	margin: 0px;
+	font-weight: normal;
+	font-style: normal;
+	opacity: 0.7;
+	font-size: 8px;
+}
+#workspaces button {
+	padding: 0px 5px;
+	margin: 0px 3px;
+	border-radius: 8px;
+	color: @background;
+	background-color: @background;
+	transition:  all 0.3s ease-in-out;
+	font-size: 12px;
+	opacity: 0.5;
+}
+#workspaces button:hover {
+	background-color: @background;
+	border-radius: 8px;
+	min-width: 30px;
+}
+#workspaces button.active {
+	padding:0px 18px;
+	margin: 0px 3px;
+	border-radius: 8px;
+	background-color:@color0;
+	transition: all 0.3s ease-in-out;
+	opacity: 1.0;
+}
+
+/*#workspaces button.focused {
+    all: unset;
+    color: @background;
+    padding: 0;
+    border: 1px solid @color6;
+    background: @background;
+    min-width: 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1px;
+}*/
+
+/*#custom-cava {
+    font-family: 'bargraph';
+}*/
+
+#battery.charging,
+#battery.good:not(.charging),
+#battery.warning:not(.charging),
+#battery.low:not(.charging),
+#battery.critical:not(.charging) {
+    border-radius: 5px;
+}
+
+#battery.good:not(.charging) {
+    color: @color6;
+}
+
+#battery.warning:not(.charging) {
+    color: #f7a894;
+}
+
+#battery.low:not(.charging),
+#battery.critical:not(.charging) {
+    color: #f7276b;
+}
+
+#battery.critical:not(.charging) {
+    animation: blink 0.75s linear infinite alternate;
+}
+
+@keyframes blink {
+    to {
+        color: #f7276b;
+        background: #d9dee4;
+    }
+}
+
+

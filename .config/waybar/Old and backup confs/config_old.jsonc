@@ -1,0 +1,194 @@
+{
+  "layer": "top",
+  "style": "~/.config/waybar/style.css",
+  "margin-left": 8,
+  "margin-right": 8,
+  "margin-top": 4,
+  "margin-bottom": 0,
+
+  /////////////////////////
+
+  "modules-left": [
+    "clock",
+    "custom/power",
+    "network",
+    "bluetooth", 
+    "microphone",
+    "custom/astrill"	
+    //"cpu",
+    //"memory",
+    //"network#speed"
+  ],
+  "modules-center": [
+    "hyprland/workspaces" 
+    //"temperature#gpu"
+  ],
+  "modules-right": [
+    //"custom/volume",
+    "battery",
+    "wireplumber",
+    "custom/brightness"
+  ],
+
+  ////////////////////////
+
+ "clock": {
+     "format": "[  {:%I:%M %p} ]", //• %a %d/%m}",
+     "format-alt": "[ {:%a, %d %b} ]",
+     "tooltip-format": false //"<tt><small>{calendar}</small></tt>",
+     //"calendar": {
+   	    //"mode": "year",
+	    //"mode-mon-col":3,
+	    //"weeks-pos": "right",
+	    //"on-scroll":1,
+	    //"format":{
+	//	    "months":"<span color='#f87e68'><b>{}</b></span>",
+          //          "days":"<span color='#f87e68'>{}</span>",
+            //        "weeks":"<span color='#f87e68'><b>W{}</b></span>",
+              //      "weekdays":"<span color='#f87e68'><b>{}</b></span>",
+                //    "today":"<span color='#f87e68'><b><u>{}</u></b></span>"
+	    //}
+	//}
+  },
+
+  "custom/power": {
+	  "format": "[  ]",
+	  "on-click": "wlogout",
+	  "tooltip":false
+  },
+
+ "network": {
+     "format-wifi": "[ {icon}]",
+     "interface": "wlan0",
+     //"format-alt": "[ {essid} ]",
+     "format-ethernet": "[ 󰈀 ]",
+     "format-icons": ["󰤯 ", "󰤟 ", "󰤢 ", "󰤨 "],
+     "format-disconnected": "[ 󰪎  ]",
+     "on-click": "nm-connection-editor",
+     "interval": 3,
+     "tooltip": false
+   },
+
+  "bluetooth": {
+    "format": "[ {icon} ]",
+    "format-icons": ["", "󰤾", "󰥀", "󰥄", "󰥈"],
+    "format-connected": "[ {icon} {num_connections} ]",
+    "format-connected-battery": "[ {icon} {device_battery_percentage}% ]",
+    "tooltip": false,
+    "on-click": "blueman-manager"
+  },
+
+  "custom/astrill": {
+	  "format": "[  | {} ]",
+	  "exec": "~/.config/waybar/scripts/astrill-ipcheck.sh",
+	  "interval":10,
+	  "tooltip": false,
+	  "on-click": "/usr/local/Astrill/astrill"
+  },
+ 
+  "hyprland/workspaces": {
+	"on-click": "activate",
+	"active-only": false,
+	"all-outputs": true,
+    	"format": "{icon}",
+	"format-icons": {
+		"urgent": "",
+		"active": "",
+		"default": ""
+	},
+	"persistent_workspaces": {
+		"*":5
+	},
+    	"tooltip": false
+  },
+
+  "battery": {
+    "states": {
+      "good": 60,
+      "warning": 30,
+      "critical": 15
+    },
+
+
+    "format": "[ {capacity}% {icon}  ]",
+    "format-full": "[ {capacity}% {icon}  ]",
+    "format-plugged": "[ {capacity}% <span font='Font Awesome 5 Free'>\uf0e7</span> ]",
+    "format-alt": "[ {capacity}%  ]",
+    "format-icons": ["░░░░░░░░░░", "█░░░░░░░░░", "██░░░░░░░░", "███░░░░░░░", "████░░░░░░", "█████░░░░░", "██████░░░░", "███████░░░", "████████░░", "█████████░", "██████████"],
+    "tooltip": false
+  },
+
+  "wireplumber": {
+	  "format": "[ {volume}% {icon}  ]",
+	  "format-muted": "[ muted --------  ]",
+          "format-icons": ["░░░░░░░░░░", "█░░░░░░░░░", "██░░░░░░░░", "███░░░░░░░", "████░░░░░░", "█████░░░░░", "██████░░░░", "███████░░░", "████████░░", "█████████░", "██████████"],
+	  "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+	  "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+          "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+  }, 
+
+  "custom/brightness": {
+	  "exec": "~/.config/waybar/scripts/brightness.sh",
+	  "interval":5,
+	  "return-type": "integer",
+	  "format": "[ {}%  ]",
+          "format-icons": ["░░░░░░░░░░", "█░░░░░░░░░", "██░░░░░░░░", "███░░░░░░░", "████░░░░░░", "█████░░░░░", "██████░░░░", "███████░░░", "████████░░", "█████████░", "██████████"],
+	  "signal":7,
+  },
+
+    
+
+
+ // "custom/cava": {
+   // "format": "{} {icons}",
+   // "format-icons": ["░░░░░░░░░░", "█░░░░░░░░░", "██░░░░░░░░", "███░░░░░░░", "████░░░░░░", "█████░░░░░", "██████░░░░", "███████░░░", "████████░░", "█████████░", "██████████"],
+   // "exec": "~/.config/waybar/scripts/cava.sh",
+   // "tooltip": false
+ // },
+
+  //"custom/volume": {
+    //"format": "{} ",
+    //"exec": "~/.config/waybar/scripts/volume",
+    //"interval": 2,
+    //"tooltip": false
+  //},
+ 
+ // "temperature#gpu": {
+   // "thermal-zone": 5,
+    //"critical-threshold": 80,
+    //"format-critical": "{temperatureC}°C ",
+    //"format": "{temperatureC}°C ",
+    //"tooltip": false
+  //},
+
+ // "network#speed": {
+   // "interval": 1,
+   // "format": "{ifname}%%",
+   // "format-wifi": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+   //"format-ethernet": " {bandwidthDownBytes}  {bandwidthUpBytes}",
+   // "format-disconnected": "󰌙",
+   //"tooltip-format": "{ipaddr}",
+   //"format-linked": "󰈁 {ifname} (No IP)",
+   // "tooltip-format-wifi": "{essid} {icon} {signalStrength}%",
+   // "tooltip-format-ethernet": "{ifname} 󰌘",
+   // "tooltip-format-disconnected": "󰌙 Disconnected",
+   // "max-length": 22,
+  //  "min-length": 20,
+  //  "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+  //  "tooltip": false
+  //},
+
+  //"cpu": {
+    //"interval": 1,
+    //"format": "{usage}% <span font='Font Awesome 6 Free-Solid'>\uf2db</span>",
+    //"tooltip": false
+  //},
+
+  //"memory": {
+    //"interval": 1,
+    //"format": "{percentage}% <span font='Font Awesome 5 Free'>\uf538</span>",
+    //"tooltip": false
+  //},
+
+}
+

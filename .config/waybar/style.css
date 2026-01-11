@@ -1,0 +1,121 @@
+@import url("colors-waybar.css");
+
+* {
+  background-color: transparent;
+  font-family: "JetBrainsMono", monospace;
+  font-size: 16px;
+  font-weight: bold;
+  /*padding: 0;
+  margin: 0;*/
+  border: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+window#waybar {
+  background-color: alpha(@color0, 0.7);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 0px;
+}
+
+.module {
+  padding: 8px 4px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 0px;
+  border-radius: 6px;
+  margin: 4px 6px;
+}
+
+#clock {
+  color: @color6;
+}
+#custom-volume {
+  color: @color6;
+}
+#custom-volume.muted {
+  color: @color0;
+  background-color: @color6
+}
+
+#backlight {
+  color: @color6;
+}
+
+#battery{
+  color: @color6;
+}
+#custom-power {
+  color: @color6;
+  border: 0px;
+}
+#mpris {
+  color: @color6;
+}
+
+#network {
+  color: @color6;
+}
+
+#bluetooth
+#workspaces {
+	background: @color6;
+	border-radius: 0px;
+	padding: 0;
+	margin: 0;
+	font-weight: normal;
+	font-style: normal;
+	opacity: 1;
+	font-size: 1px;
+}
+#workspaces button {
+	padding: 1px 1px;
+	margin: 1px 1px;
+	border-radius: 6px;
+	color: @color6;
+	background-color: @background;
+	transition:  all 0.3s ease-in-out;
+	font-size: 1px;
+	opacity: 0.5;
+}
+#workspaces button:hover {
+	background-color: @background;
+	border-radius: 6px;
+	min-height: 40px;
+}
+#workspaces button.active {
+	padding:1px 1px;
+	margin: 1px 1px;
+	border-radius: 6px;
+	background-color:@color0;
+	transition: all 0.3s ease-in-out;
+	opacity: 1.0;
+}
+
+#battery.charging,
+#battery.good:not(.charging),
+#battery.warning:not(.charging),
+#battery.critical:not(.charging) {
+  border: 0;
+}
+
+#battery.good:not(.charging) {
+  color: @color6;
+}
+#battery.warning:not(.charging) {
+  color: #CEA273;
+}
+#battery.critical:not(.charging) {
+  color: #A4133C;
+}
+
+#battery.critical:not(.charging) {
+    animation: blink 0.60s linear infinite alternate;
+}
+
+@keyframes blink {
+  to {
+        color: #F5EFEB;
+  }
+}
