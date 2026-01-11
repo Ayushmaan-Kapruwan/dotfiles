@@ -1,0 +1,382 @@
+@import url("colors-waybar.css");
+
+@define-color fg @color6;
+@define-color fg2 @color7;
+@define-color bg @color0;
+@define-color bg2 @color1;
+@define-color hover rgba(255, 255, 255, 0.07);
+
+* {
+  all: unset;
+  color: @fg;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: "JetBrainsMono", monospace;
+  transition: 200ms;
+}
+
+.blank-window {
+  background-color: transparent;
+}
+
+/* --- NOTIFICATION --- */
+
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main background container */
+.floating-notifications.background .notification {
+  background-color: alpha(@bg, 0.5);
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  margin: 4px;
+  padding: 0;
+  min-height: 100px;
+  height: auto;
+}
+
+/* Specific Urgency Borders */
+.floating-notifications.background .notification.low {
+  border: 2px solid @fg;
+}
+
+.floating-notifications.background .notification.normal {
+  border: 2px solid @fg;
+}
+
+.floating-notifications.background .notification.critical {
+  border: 2px solid @fg2;
+}
+
+.floating-notification.background .notification:hover {
+  background-image: none;
+  background-color: transparent;
+  border-color: @fg2;                  
+}
+
+.notification-content {
+  background: transparent;
+  padding: 6px;
+}
+
+.floating-notification.background .notification .notification-content:hover {
+  all: unset;
+  background: transparent;
+}
+
+/* Actions (Buttons) */
+.notification-action {
+  border-radius: 20px;
+  background-color: transparent;
+  color: @fg; 
+  margin: 6px;
+  border: 1px solid @fg;
+}
+
+.notification-action:hover {
+  background-color: alpha(@fg, 0.5);
+  border: 1px solid alpha(@fg, 0.5);
+  color: @bg;
+}
+
+.notification-action:active {
+  background-color: alpha(@fg, 0.5);
+  color: @bg;
+}
+
+/* Text and Images */
+.image {
+  margin: 10px;
+}
+
+.summary {
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.body {
+  all: unset;
+  font-size: 0.8rem;
+  -gtk-icon-shadow: none;
+}
+
+/* Close Button */
+.close-button {
+  margin: 6px;
+  padding: 4px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.close-button:hover {
+  background-color: @hover;
+}
+
+/* Progress Bar (at the bottom of notification) */
+.notification progress {
+  background-color: @fg;
+}
+
+/* ---- CONTROL CENTER ---- */
+
+.control-center {
+  background-color: alpha(@bg, 0.7);
+  border-radius: 0px;
+  padding: 0px 8px;
+  border-radius: 15px 0px 0px 15px;
+}
+
+/* --- Notifications Logic --- */
+
+/* Normal Notifications */
+.control-center .notification-row .notification-background .notification.normal {
+  background-color: alpha(@bg, 0.9);
+  border-radius: 10px;
+  margin: 4px 0px;
+  padding: 4px;
+  color: @fg;
+  border: 1px solid @fg;
+}
+
+/* Critical Notifications */
+.control-center .notification-row .notification-background .notification.critical {
+  background-color: alpha(@bg, 0.9);
+  border-radius: 10px;
+  margin: 4px 0px;
+  padding: 4px;
+  color: @fg2;
+  border: 2px solid @fg2;
+}
+
+.control-center .notification-row .notification-background .notification .notification-content {
+  margin: 6px;
+  padding: 8px 6px 2px 2px;
+}
+
+/* Action Buttons */
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action {
+  background-color: alpha(@fg, 0.7);
+  color: @fg;
+  border-radius: 12px;
+  margin: 6px;
+  border: 1px solid @fg;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:hover {
+  background-color: alpha(@fg, 0.5);
+  border: 1px solid alpha(@fg, 0.5);
+  color: @bg;
+}
+
+.control-center .notification-row .notification-background .notification > *:last-child > * .notification-action:active {
+  background-color: alpha(@fg, 0.5);
+  color: @bg;
+}
+
+/* Close Button */
+.control-center .notification-row .notification-background .close-button {
+  background: transparent;
+  border-radius: 10px;
+  color: @fg;
+  margin: 4px;
+  padding: 4px;
+}
+
+.control-center .notification-row .notification-background .close-button:hover {
+  background-color: @hover;
+}
+
+.control-center .notification-row .notification-background .close-button:active {
+  background-color: alpha(@fg, 0.5);
+}
+
+/* --- Progress and Scrollbars --- */
+progressbar,
+progress,
+trough {
+  border-radius: 12px;
+}
+
+progressbar {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- Grouping --- */
+.notification-group {
+  margin: 2px 8px 2px 8px;
+}
+
+.notification-group-headers {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: @fg;
+  letter-spacing: 2px;
+}
+
+.notification-group-collapse-button,
+.notification-group-close-all-button {
+  background: transparent;
+  color: @fg;
+  margin: 4px;
+  border-radius: 10px;
+  padding: 4px;
+}
+
+.notification-group-collapse-button:hover,
+.notification-group-close-all-button:hover {
+  background: alpha(@fg, 0.5);
+}
+
+/* --- Widgets --- */
+
+.widget-title {
+  font-size: 1.2em;
+  margin: 6px;
+  color: @fg;
+}
+
+.widget-title > button {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 6px;
+  padding: 4px 4px;
+  color: @fg;
+  transition: all 0.3s ease-in-out;
+}
+
+.widget-title > button:hover {
+  min-width: 40px;
+  background: alpha(@fg, 0.5);
+  color: @fg;
+}
+
+.widget-dnd {
+  margin: 6px;
+  font-size: 1.2rem;
+  color: @fg;
+}
+
+.widget-dnd > switch {
+  background: rgba(255, 255, 255, 0.07);
+  font-size: initial;
+  border-radius: 8px;
+  box-shadow: none;
+  padding: 4px;
+}
+
+.widget-dnd > switch:hover {
+  background: alpha(@fg, 0.5);
+}
+
+.widget-dnd > switch:checked {
+  background: alpha(@fg, 0.5);
+}
+
+.widget-dnd > switch:checked:hover {
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.widget-dnd > switch slider {
+  background: @fg;
+  border-radius: 6px;
+}
+
+/* --- Music Player (MPRIS) --- */
+
+.widget-mpris {
+  background: transparent;
+  padding: 0;
+  margin: 10px 4px;
+}
+
+/* --- Music Player (MPRIS) Dark Blur Fix --- */
+
+/* Target the containers that hold the blurred image */
+.widget-mpris carousel,
+.widget-mpris stack {
+  background-color: rgba(0, 0, 0, 0.5) !important; /* Adjust 0.5 to 0.8 for even darker */
+  border-radius: 12px;
+}
+
+.widget-mpris-player {
+  /* Use alpha to let the dark blur show through slightly, or keep it solid */
+  background-color: alpha(@bg, 0.85); 
+  background-image: none !important; 
+  border-radius: 12px;
+  padding: 16px;
+  margin: 8px 16px; /* Known fix for feathered edges */
+  border: 2px solid @fg;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Ensure the inner content box is also cleared */
+.widget-mpris-player > box {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+.widget-mpris-album-art {
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.widget-mpris-title {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: @fg;
+}
+
+.widget-mpris-subtitle {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: @fg;
+  opacity: 0.7;
+}
+
+/* --- Media Buttons Styling --- */
+
+.widget-mpris-player > box > button {
+  background: transparent;
+  color: @fg;
+  border-radius: 50%; /* Circular controls look cleaner */
+  padding: 4px;
+}
+
+.widget-mpris-player > box > button:hover {
+  background: alpha(@fg, 0.15);
+}
+  /* Buttons menu */
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 0px 0px;
+  margin: 0px 6px 6px 6px;
+  background: transparent;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  font-family: "JetBrainsMono", monospace;
+  font-weight: bold;
+  font-size: 22px;
+  margin: 6px 4px;
+  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.07);
+  color: @fg;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: alpha(@fg, 0.5);
+  min-width: 40px;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:active {
+  color: @bg;
+  background: alpha(@fg, 0.5);
+}
+

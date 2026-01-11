@@ -1,0 +1,134 @@
+{
+  "$schema": "/etc/xdg/swaync/configSchema.json",
+	"cssPriority": "user",
+  
+  /* Notifications position -------------------------------------------- */
+
+  "positionX": "right",
+  "positionY": "top",
+
+  "notification-window-width": 400,
+  "notification-icon-size": 48,
+  "notification-body-image-height": 160,
+  "notification-body-image-width": 200,
+
+
+  /* Control Center position --------------------------------------------*/
+
+  "control-center-positionX": "right",
+  "control-center-positionY":"center",
+
+  "control-center-margin-top": 160,
+  "control-center-margin-bottom": 160,
+  "control-center-margin-right": 0,
+  "control-center-margin-left": 0,
+
+  "control-center-width": 380,
+
+  /* more --------------------------------------------------------------*/
+
+  "layer-shell": true,
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "fit-to-screen": true,
+  "layer-shell-cover-screen": false,
+  "timeout": 4,
+  "timeout-low": 2,
+  "timeout-critical": 6,
+  
+  "keyboard-shortcuts": true,
+  "image-visibility": "when-available",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "script-fail-notify": true,
+  "scripts": {
+    "example-script": {
+      "exec": "echo 'Do something...'",
+      "urgency": "Normal"
+    }
+  },
+  "notification-visibility": {
+    "example-name": {
+      "state": "muted",
+      "urgency": "Low",
+      "app-name": "Spotify"
+    }
+  },
+  "widgets": [
+    "label",
+    "buttons-grid",
+    "title",
+    "dnd",
+    "notifications"
+  ],
+  "widget-config": {
+    "label": {
+      "max-lines": 1,
+      "text": "  "
+    },
+    "title": {
+      "text": "Notifications",
+      "clear-all-button": true,
+      "button-text": " clear all "
+    },
+    "dnd": {
+      "text": "Do Not Disturb"
+    },
+    
+    "mpris": {
+      "image-size": 96,
+      "image-radius": 12
+    },
+
+    "volume": {
+      "label": "󰕾",
+        "show-per-app": true
+    },
+    "buttons-grid": {
+      "actions": [
+        {
+          "label": "",
+          "command": "pavucontrol"
+        },
+        {
+          "label": "",
+          "command": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        },
+        {
+          "label": "󰀝",
+          "command": "~/.config/waybar/scripts/airplane-toggle.sh"
+        },
+        {
+          "label": "󰂯",
+          "command": "blueman-manager"
+        },
+        {
+          "label": "",
+          "command": "hyprshot -m region"
+        },
+        {
+          "label": "",
+          "command": "obs"
+        },
+        {
+          "label": "",
+          "command": "~/.config/hypr/scripts/warp-toggle.sh"
+        },
+        {
+          "label": "󱉧",
+          "command": "cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        },
+        {
+          "label": "󰚩",
+          "command": "zen-browser 'https://chatgpt.com'"
+        },
+        {
+          "label": "",
+          "command": "waypaper --random"
+        }
+      ],
+      "buttons-per-row": 5
+    }
+  }
+}

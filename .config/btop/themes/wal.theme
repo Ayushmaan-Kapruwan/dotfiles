@@ -1,0 +1,56 @@
+# Wal → btop theme generated automatically
+
+theme[main_bg]=""
+theme[main_fg]="#698BAC"
+
+theme[title]="#6081A1"
+theme[hi_fg]="#698BAC"
+theme[selected_bg]="#5e6773"
+theme[selected_fg]="#6081A1"
+theme[inactive_fg]="#5e6773"
+theme[proc_misc]="#698BAC"
+theme[cpu_box]="#465C71"
+theme[mem_box]="#465C71"
+theme[net_box]="#465C71"
+theme[proc_box]="#465C71"
+theme[div_line]="#365F83"
+
+# Temperature graph colors
+theme[temp_start]="#465C71"
+theme[temp_mid]=""
+theme[temp_end]="#698BAC"
+
+# CPU graph colors
+theme[cpu_start]="#465C71"
+theme[cpu_mid]=""
+theme[cpu_end]="#698BAC"
+
+# Mem/Disk free meter
+theme[free_start]="#465C71"
+theme[free_mid]=""
+theme[free_end]="#698BAC"
+
+# Mem/Disk cached meter
+theme[cached_start]="#465C71"
+theme[cached_mid]=""
+theme[cached_end]="#698BAC"
+
+# Mem/Disk available meter
+theme[available_start]="#465C71"
+theme[available_mid]=""
+theme[available_end]="#698BAC"
+
+# Mem/Disk used meter
+theme[used_start]="#465C71"
+theme[used_mid]=""
+theme[used_end]="#698BAC"
+
+# Download graph colors
+theme[download_start]="#465C71"
+theme[download_mid]=""
+theme[download_end]="#698BAC"
+
+# Upload graph colors
+theme[upload_start]="#465C71"
+theme[upload_mid]=""
+theme[upload_end]="#698BAC"

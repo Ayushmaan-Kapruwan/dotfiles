@@ -1,0 +1,119 @@
+//@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+//MAIN CONFIG
+
+configuration {
+  //monitor: 1;
+  display-drun: "";
+  drun-display-format: "{icon} {name}";
+  modi: "drun";
+	font-family: "CaskaydiaCove Nerd Font Mono", "Monospace";
+  show-icons: true;
+  location: 6;
+}
+
+@theme "/dev/null"
+
+//EVERYTHING
+
+* {
+  text-color: rgba(195, 197, 199, 1.0);
+  background-blur: rgba(15, 24, 34, 0.5);
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+    foreground: rgba(105, 139, 172, 1.0);
+    selected: rgba(105, 139, 172, 0.5);
+}
+
+//MAIN WINDOW
+
+window {
+  width: 30%;
+  background-color: @background-blur;
+  //padding: 2.5ch;
+  border-radius: 15px 15px 0px 0px;
+  border: 0px;
+  border-color: @foreground;
+}
+
+//MAIN BOX
+
+mainbox {
+  border: 0;
+  background-color: transparent;
+  border-radius: 8px;
+}
+
+//INPUT BAR
+inputbar {
+  children: [entry];
+  background-color: transparent;
+  border: 2px;
+  border-color: @foreground;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 8px;
+}
+
+//ENTRY BOX
+entry {
+  background-color: transparent;
+  text-color: rgba(195, 198, 203, 1.0);
+  placeholder: "search";
+}
+
+//LIST BOX
+listview {
+  background-color: transparent;
+  margin: 0px 12px 12px 12px;
+  padding: 0px 0px;
+  //border: 2px;
+  //border-color: @foreground;
+  scrollbar: false;
+  border-radius: 8px;
+  lines: 5;
+  //fixed-height: false;
+}
+
+element {
+  //border: 2px;
+  //border-color: @foreground;
+  background-color: transparent;
+  margin:0px ;
+  padding: 10px 4px;
+  border-radius: 6px;
+}
+
+element-text {
+  vertical-align: 0.5;
+  background-color: transparent;
+}
+
+element-icon {
+  size: 30;
+  background-color: transparent;
+}
+
+element selected {
+  background-color: @selected;
+  //border: 2px;
+  //border-color: @foreground;
+}
+
+element normal {
+  background-color: transparent;
+}
+
+element alternate {
+  background-color: transparent;
+}
+
+
+
+
+
+
+
+  
+
