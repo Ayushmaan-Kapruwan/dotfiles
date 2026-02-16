@@ -1,0 +1,29 @@
+-- lua/plugins/init.lua
+return {
+
+  --Catppuccin ( Theme ) 
+  --{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  
+  --treesitter ( Syntax highlighting and indenting for languages )
+  --{ "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+
+  -- Telescope (Search for files in current directory and specific words in current file)
+  --{
+    --'nvim-telescope/telescope.nvim', tag = '0.1.8',
+  -- or                              , branch = '0.1.x',
+      --dependencies = { 'nvim-lua/plenary.nvim' },
+    --},
+  
+  -- Neotree (File explorer plugin)
+    --{
+    --"nvim-neo-tree/neo-tree.nvim",
+    --branch = "v3.x",
+    --dependencies = {
+      --"nvim-lua/plenary.nvim",
+      --"MunifTanjim/nui.nvim",
+      --"nvim-tree/nvim-web-devicons", -- optional, but recommended
+    --},
+    --lazy = false, -- neo-tree will lazily load itself
+  --},
+}
+

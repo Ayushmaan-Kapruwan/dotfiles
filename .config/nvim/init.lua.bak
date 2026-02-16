@@ -1,0 +1,31 @@
+--vim.cmd("set expandtab")
+--vim.cmd("set tabstop=2")
+--vim.cmd("set softtabstop=2")
+--vim.cmd("set shiftwidth=2")
+
+--Fetches the lazy config file from lua/config/lazy.lua
+--require("config.lazy")
+
+--setups the catppuccin theme
+--require ("catppuccin").setup({
+  --transparent_background= true,
+--})
+--vim.cmd.colorscheme "catppuccin"
+
+--setups the telescope plugin
+--local builtin = require("telescope.builtin")
+--setups Telescope file search keybind to Ctrl + p
+--vim.keymap.set('n', '<C-p>', builtin.find_files, {})
+--setups Telescope word search keybind to Space 'f' 'g'
+--vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+--setups the treesitter plugin for highlighting
+--local config = require("nvim-treesitter.configs")
+--config.setup({
+  --ensure_installed = {"lua", "javascript"},
+  --highlight = { enable = true },
+  --indent = {enable = true },
+--})
+
+--setups neotree keybind to Ctrl + n 
+--vim.keymap.set('n', '<C-n>', ':Neotree filesystem reveal left<CR>', {})
