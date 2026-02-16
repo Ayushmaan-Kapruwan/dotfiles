@@ -1,6 +1,7 @@
 {
   "layer": "top",
   "position": "left",
+  "reload_style_on_change": true,
   "width": 24,
   "style": "~/.config/waybar/style.css",
   "margin-left": 0,

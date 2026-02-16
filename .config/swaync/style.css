@@ -40,15 +40,15 @@
 
 /* Specific Urgency Borders */
 .floating-notifications.background .notification.low {
-  border: 2px solid @fg;
+  border: 1px solid @fg;
 }
 
 .floating-notifications.background .notification.normal {
-  border: 2px solid @fg;
+  border: 1px solid @fg;
 }
 
 .floating-notifications.background .notification.critical {
-  border: 2px solid @fg2;
+  border: 1px solid @fg2;
 }
 
 .floating-notification.background .notification:hover {

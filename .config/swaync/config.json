@@ -4,10 +4,11 @@
   
   /* Notifications position -------------------------------------------- */
 
-  "positionX": "right",
+  "positionX": "center",
   "positionY": "top",
 
   "notification-window-width": 400,
+  "notification-window-margin-top": 0,
   "notification-icon-size": 48,
   "notification-body-image-height": 160,
   "notification-body-image-width": 200,
@@ -101,7 +102,7 @@
         },
         {
           "label": "󰂯",
-          "command": "blueman-manager"
+          "command": "blueman-manager &"
         },
         {
           "label": "",
@@ -125,7 +126,7 @@
         },
         {
           "label": "",
-          "command": "waypaper --random"
+          "command": "notify-send 'lmao' "
         }
       ],
       "buttons-per-row": 5

@@ -17,13 +17,13 @@ configuration {
 //EVERYTHING
 
 * {
-  text-color: rgba(195, 197, 199, 1.0);
-  background-blur: rgba(15, 24, 34, 0.5);
+  text-color: rgba(196, 199, 198, 1.0);
+  background-blur: rgba(21, 31, 30, 0.5);
   margin: 0;
   padding: 0;
   spacing: 0;
-    foreground: rgba(105, 139, 172, 1.0);
-    selected: rgba(105, 139, 172, 0.5);
+    foreground: rgba(153, 169, 158, 1.0);
+    selected: rgba(153, 169, 158, 0.5);
 }
 
 //MAIN WINDOW
@@ -51,7 +51,7 @@ inputbar {
   background-color: transparent;
   border: 2px;
   border-color: @foreground;
-  padding: 12px;
+  padding: 12px 6px;
   margin: 12px;
   border-radius: 8px;
 }
@@ -66,7 +66,7 @@ entry {
 //LIST BOX
 listview {
   background-color: transparent;
-  margin: 0px 12px 12px 12px;
+  margin: 0px 12px 6px 12px;
   padding: 0px 0px;
   //border: 2px;
   //border-color: @foreground;
