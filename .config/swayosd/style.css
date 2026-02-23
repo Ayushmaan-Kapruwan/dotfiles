@@ -1,0 +1,56 @@
+@import url("colors-waybar.css");
+
+window#osd {
+  background: alpha(@color0, 0.6);
+  border-radius: 15px;
+  border: none;
+}
+
+#container {
+  margin: 16px;
+}
+
+image,
+label {
+  color: @color6;
+}
+
+progressbar:disabled,
+image:disabled {
+  opacity: 0.5;
+}
+
+progressbar,
+segmentedprogress {
+  min-height: 6px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+}
+
+/* Fix for the bar background */
+trough,
+segment {
+  min-height: 6px;
+  border-radius: 999px;
+  border: none;
+  background: alpha(@color6, 0.5);
+}
+
+/* Fix for the active progress */
+progress,
+segment.active {
+  min-height: 6px;
+  border-radius: 999px;
+  border: none;
+  background: @color6;
+}
+
+/* Flattened nesting for segments */
+segment {
+  margin-left: 8px;
+}
+
+segment:first-child {
+  margin-left: 0;
+}
