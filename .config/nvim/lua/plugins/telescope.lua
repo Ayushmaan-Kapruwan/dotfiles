@@ -21,9 +21,9 @@ return {
 		})
 
 		--setups Telescope file search keybind to Ctrl + p
-		vim.keymap.set("n", "<C-f>", builtin.find_files, {})
+		vim.keymap.set("n", "<C- >", builtin.find_files, {})
 
 		--setups Telescope word search keybind to Space 'f' 'g'
-		vim.keymap.set("n", "<leader>fg", builtin.live_grep, {})
+		vim.keymap.set("n", "<C-S- >", builtin.live_grep, {})
 	end,
 }

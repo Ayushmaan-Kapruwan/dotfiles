@@ -26,6 +26,6 @@ return {
 		vim.keymap.set("n", "<C-h>", ":BufferLineCyclePrev<CR>", { desc = "Previous Tab" })
 
 		-- Close current tab
-		vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { desc = "Close Current Tab" })
+		vim.keymap.set("n", "<C-w>", ":bdelete<CR>", { desc = "Close Current Tab" })
 	end,
 }

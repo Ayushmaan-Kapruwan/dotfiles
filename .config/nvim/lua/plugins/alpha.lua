@@ -33,11 +33,12 @@ return {
 		-- Buttons
 		dashboard.section.buttons.val = {
 			dashboard.button("e", "  New file", ":ene <BAR> startinsert<CR>"),
-			dashboard.button("Ctrl + F", "󰥨  Fuzzy Find", ":Telescope find_files<CR>"),
-			dashboard.button(" Leader fg", "󰱼  Fuzzy Grep", ":Telescope live_grep<CR>"),
-			dashboard.button("Ctrl + N", "  Neotree", ":Telescope oldfiles<CR>"),
-			dashboard.button("q", "󰩈  Quit", ":qa<CR>"),
+			dashboard.button("Ctrl + Space", "󰥨  Fuzzy Find", ":Telescope find_files<CR>"),
+			dashboard.button("Ctrl + Shift + Space", "󰱼  Fuzzy Grep", ":Telescope live_grep<CR>"),
+			dashboard.button("Ctrl + E", "  Neotree", ":Telescope oldfiles<CR>"),
 			dashboard.button(" Leader st", "󰨽 Find Comments", "<cmd>TodoTelescope<CR>"),
+			dashboard.button("Leader l", "󰒲 Lazy Vim", "<cmd>Lazy<CR>"),
+			dashboard.button("q", "󰩈  Quit", ":qa<CR>"),
 		}
 
 		-- Footer

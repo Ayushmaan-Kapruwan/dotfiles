@@ -38,6 +38,6 @@ return {
 		-- You MUST pass 'opts' here for the table above to work!
 		require("neo-tree").setup(opts)
 		-- Keymap
-		vim.keymap.set("n", "<C-n>", ":Neotree toggle filesystem left<CR>", { desc = "Toggle Neo-tree" })
+		vim.keymap.set("n", "<C-e>", ":Neotree toggle filesystem left<CR>", { desc = "Toggle Neo-tree" })
 	end,
 }
