@@ -26,6 +26,7 @@ fi
 	#Copy the color scheme to different places
 	cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/colors-waybar.css #waybar
   cp ~/.cache/wal/colors-waybar.css ~/.config/swaync/colors-waybar.css  #swaync
+  cp ~/.cache/wal/colors-waybar.css ~/.config/swayosd/colors-waybar.css #swayosd
   cp ~/.cache/wal/colors-waybar.css ~/.config/gtk-4.0/colors-gtk.css  #gtk-4
   cp ~/.cache/wal/colors-waybar.css ~/.config/gtk-3.0/colors-gtk.css  #gtk-3
   cp ~/.cache/wal/colors.qml ~/.config/quickshell/Colors.qml  #quickshell
@@ -93,6 +94,9 @@ update_rofi_bg() {
   
   #swaync
   swaync-client --reload-css
+
+  #swayosd
+  killall swayosd-server && swayosd-server &
 
 	#Reload kitty with new colors
 	kitty @ set-colors --all ~/.cache/wal/colors-kitty.conf
