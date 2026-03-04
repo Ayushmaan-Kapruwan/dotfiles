@@ -1,0 +1,46 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    //"type": "kitty-icat",
+    "source": "/home/sof/.config/fastfetch/sof.png",
+    "padding": {
+      "top" : 2,
+      "left" : 5
+    }
+  },
+
+  "display": {
+    "separator": " 󰅂 ",
+    "key": {
+        "width": 15 
+    }
+  },
+  "modules": [
+    "title",
+    "separator",
+
+    // --- SECTION 1: SYSTEM ---
+    { "type": "custom", "format": "󰘳 [ SOFTWARE ]" },
+    { "type": "os", "key": "  󰣇 OS" },
+    { "type": "kernel", "key": "  󰒋 Kernel" },
+    { "type": "command", "key": "  󰃭 Age", "text": "birth_install=$(stat -c %W /); current_time=$(date +%s); diff=$(( (current_time - birth_install) / 86400 )); echo \"$diff days ago\"" },
+    { "type": "packages", "key": "   Packages" },
+    "break",
+
+    // --- SECTION 2: HARDWARE ---
+    { "type": "custom", "format": "󰢮 [ HARDWARE ]" },
+    { "type": "cpu", "key": "  󰻠 CPU" },
+    { "type": "gpu", "key": "  󰢮 GPU" },
+    { "type": "host", "key": "  󰌢 Host" },
+    "break",
+
+    // --- SECTION 3: SESSION ---
+    { "type": "custom", "format": "󱂬 [ SESSION ]" },
+    { "type": "wm", "key": "  󱂬 WM" },
+    { "type": "shell", "key": "  󱆃 Shell" },
+    { "type": "uptime", "key": "  󰅐 Uptime" },
+    "break",
+    
+    { "type": "colors", "symbol": "circle" }
+  ]
+}
