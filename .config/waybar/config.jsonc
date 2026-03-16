@@ -34,7 +34,7 @@
 
   "custom/power": {
     "format": " 󰤆 ",
-    "on-click": "wlogout",
+    "on-click": "wleave",
     "tooltip": false
   },
 
@@ -99,8 +99,8 @@
 
   "backlight": {
     "device": "intel_backlight",
-    "format": "{icon}",
-    "format-alt": " {icon}\n{percent}",
+    "format-alt": "{icon}",
+    "format": " {icon}\n{percent}",
     "format-icons": ["","","","","","","","","","","","","",""],
     "tooltip": false,
     "on-click-right": "~/.config/waybar/scripts/sunset-toggle.sh"

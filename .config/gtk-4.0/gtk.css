@@ -1,29 +1,57 @@
 @import url("colors-gtk.css");
 
-window, .background {
+/* Optional: prevent random GNOME accent leaks */
+* {
+  -gtk-accent-color: @color6;
+}
+
+/* Base window */
+window,
+.background {
   background-color: alpha(@color0, 0.7);
   color: @color6;
 }
 
-headerbar, .titlebar {
+/* Headerbars */
+headerbar,
+.titlebar,
+headerbar.titlebar,
+headerbar.flat {
   background-color: alpha(@color0, 0.7);
   color: @color6;
+  background-image: none;
+  border: none;
 }
 
+/* Toolbars */
 toolbar {
   background-color: transparent;
   color: @color6;
   border-bottom: 1px solid @color0;
 }
 
+/* Menubar */
 menubar {
   background-color: alpha(@color0, 0.1);
   color: @color7;
 }
 
-buttons {
+/* Buttons */
+button {
   background-color: transparent;
+  background-image: none;
   color: @color6;
+  box-shadow: none;
+}
+
+button:hover {
+  background-color: alpha(@color6, 0.1);
+  color: @color6;
+}
+
+/* Scrollbars */
+scrollbar {
+  background-color: transparent;
 }
 
 scrollbar slider {
@@ -34,117 +62,136 @@ scrollbar slider:hover {
   background-color: @color6;
 }
 
-scrollbar {
-  background-color: transparent;
+scrollbar:hover slider {
+  background-color: alpha(@color6, 0.8);
 }
 
-scrollbar:hover {
-  background-color: alpha(@color6, 0.5);
-}
-
-/* Target the device list specifically */
-treeview {
-  background-color: transparent;
-  color: @color6;
-}
-
-/* Optional: Change the color of the selected item (highlight) */
-treeview:selected {
-  background-color: alpha(@color6, 0.2);
-  color: @color6;
-}
-
-/* Optional: If the list has column headers */
-treeview header button {
-  background-color: transparent;
-  color: @color6;
-}
-
-/* The .view class is what usually gives lists their default background.
-   We also target the wrappers (viewport, scrolledwindow) to ensure 
-   we see all the way down to your window background. */
-
+/* Lists / views */
 .view,
 treeview.view,
 viewport,
 scrolledwindow {
   background-color: transparent;
-  background-image: none; /* specific fix if the theme uses a gradient */
+  background-image: none;
   color: @color6;
 }
 
-/* Keep your selection highlight */
+/* Treeview */
+treeview {
+  background-color: transparent;
+  color: @color6;
+}
+
+treeview header button {
+  background-color: transparent;
+  color: @color6;
+}
+
+/* Unified selection styling */
+:selected,
 treeview:selected,
-.view:selected {
+.view:selected,
+listbox row:selected,
+flowboxchild:selected {
   background-color: alpha(@color6, 0.2);
   color: @color6;
 }
 
-button {
-  background-color: transparent;
-  background-image: none; /* Removes theme gradients */
-  color: @color6;
-  box-shadow: none;       /* Optional: removes 3D border effects */
+listbox row:selected:focus {
+  background-color: alpha(@color6, 0.2);
 }
 
-button:hover {
-  background-color: alpha(@color6, 0.1);
+/* GTK text selection */
+selection {
+  background-color: alpha(@color6, 0.2);
   color: @color6;
 }
 
-/* The Knob/Handle */
+/* Sliders */
 scale > trough > slider {
   background-color: @color6;
-  background-image: none; /* Overrides the .png assets from the previous theme */
+  background-image: none;
 }
 
-/* The Filled part of the track */
 scale > trough > highlight {
   background-color: @color6;
   background-image: none;
 }
 
-/* The Knob */
+/* Switches */
 switch:checked > slider {
   background-color: @color6;
 }
 
-/* The Track */
 switch:checked {
-  background-color: alpha(@color6, 0.5); /* 50% opacity of your color */
+  background-color: alpha(@color6, 0.5);
 }
 
-/* The filled part of the progress bar */
+/* Progress bars */
 progressbar > trough > progress {
   background-color: @color6;
-  background-image: none; /* Crucial to override theme gradients/assets */
-}
-
-/* Optional: The empty track background */
-progressbar > trough {
-  background-color: alpha(@color0, 0.2); /* Semi-transparent version of your background */
   background-image: none;
 }
 
-/* If the progress bar is inside a list/treeview (common in GTK) */
+progressbar > trough {
+  background-color: alpha(@color0, 0.2);
+  background-image: none;
+}
+
+/* Progressbars inside lists */
 columnview.view.progressbar,
 treeview.view.progressbar {
   border-bottom-color: @color6;
   background-color: transparent;
 }
 
-/* The Tab Label (Text) */
+/* Notebook tabs */
 notebook > header > tabs > tab:checked {
   color: @color6;
 }
 
-/* The blue line underneath the active tab */
 notebook > header.top > tabs > tab:checked {
   box-shadow: inset 0 -2px @color6;
 }
 
-/* Hover state for inactive tabs */
 notebook > header > tabs > tab:hover {
   background-color: alpha(@color6, 0.1);
   color: @color6;
+}
+
+/* GTK4 section headers (fix for Lollypop blue bars) */
+.view header,
+.view .header,
+listview header,
+listview .header,
+columnview header,
+columnview .header {
+  background-color: alpha(@color0, 0.5);
+  color: @color7;
+}
+
+.view header label,
+.view .header label {
+  color: @color7;
+}
+
+/* Prevent nested view backgrounds inside headerbars */
+headerbar .view {
+  background-color: transparent;
+}
+
+/* Lollypop banner (Albums / Recently Added etc) */
+revealer.default-banner {
+  background-color: alpha(@color6, 0.12);
+  background-image: none;
+}
+
+/* Text inside the banner */
+revealer.default-banner label {
+  color: @color7;
+}
+
+/* Prevent theme gradients */
+revealer.default-banner box {
+  background-color: transparent;
 }

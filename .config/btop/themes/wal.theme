@@ -1,56 +1,56 @@
 # Wal → btop theme generated automatically
 
 theme[main_bg]=""
-theme[main_fg]="#99A99E"
+theme[main_fg]="#9B5F57"
 
-theme[title]="#6FB6BD"
-theme[hi_fg]="#99A99E"
-theme[selected_bg]="#5e7471"
-theme[selected_fg]="#6FB6BD"
-theme[inactive_fg]="#5e7471"
-theme[proc_misc]="#99A99E"
-theme[cpu_box]="#909F4F"
-theme[mem_box]="#909F4F"
-theme[net_box]="#909F4F"
-theme[proc_box]="#909F4F"
-theme[div_line]="#8FA263"
+theme[title]="#903D37"
+theme[hi_fg]="#9B5F57"
+theme[selected_bg]="#596d6d"
+theme[selected_fg]="#903D37"
+theme[inactive_fg]="#596d6d"
+theme[proc_misc]="#9B5F57"
+theme[cpu_box]="#674733"
+theme[mem_box]="#674733"
+theme[net_box]="#674733"
+theme[proc_box]="#674733"
+theme[div_line]="#6C5651"
 
 # Temperature graph colors
-theme[temp_start]="#909F4F"
+theme[temp_start]="#674733"
 theme[temp_mid]=""
-theme[temp_end]="#99A99E"
+theme[temp_end]="#9B5F57"
 
 # CPU graph colors
-theme[cpu_start]="#909F4F"
+theme[cpu_start]="#674733"
 theme[cpu_mid]=""
-theme[cpu_end]="#99A99E"
+theme[cpu_end]="#9B5F57"
 
 # Mem/Disk free meter
-theme[free_start]="#909F4F"
+theme[free_start]="#674733"
 theme[free_mid]=""
-theme[free_end]="#99A99E"
+theme[free_end]="#9B5F57"
 
 # Mem/Disk cached meter
-theme[cached_start]="#909F4F"
+theme[cached_start]="#674733"
 theme[cached_mid]=""
-theme[cached_end]="#99A99E"
+theme[cached_end]="#9B5F57"
 
 # Mem/Disk available meter
-theme[available_start]="#909F4F"
+theme[available_start]="#674733"
 theme[available_mid]=""
-theme[available_end]="#99A99E"
+theme[available_end]="#9B5F57"
 
 # Mem/Disk used meter
-theme[used_start]="#909F4F"
+theme[used_start]="#674733"
 theme[used_mid]=""
-theme[used_end]="#99A99E"
+theme[used_end]="#9B5F57"
 
 # Download graph colors
-theme[download_start]="#909F4F"
+theme[download_start]="#674733"
 theme[download_mid]=""
-theme[download_end]="#99A99E"
+theme[download_end]="#9B5F57"
 
 # Upload graph colors
-theme[upload_start]="#909F4F"
+theme[upload_start]="#674733"
 theme[upload_mid]=""
-theme[upload_end]="#99A99E"
+theme[upload_end]="#9B5F57"

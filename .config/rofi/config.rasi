@@ -17,13 +17,13 @@ configuration {
 //EVERYTHING
 
 * {
-  text-color: rgba(196, 199, 198, 1.0);
-  background-blur: rgba(21, 31, 30, 0.5);
+  text-color: rgba(193, 197, 197, 1.0);
+  background-blur: rgba(9, 23, 23, 0.5);
   margin: 0;
   padding: 0;
   spacing: 0;
-    foreground: rgba(153, 169, 158, 1.0);
-    selected: rgba(153, 169, 158, 0.5);
+    foreground: rgba(155, 95, 87, 1.0);
+    selected: rgba(155, 95, 87, 0.5);
 }
 
 //MAIN WINDOW

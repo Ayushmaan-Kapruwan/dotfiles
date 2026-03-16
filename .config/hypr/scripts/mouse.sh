@@ -1,20 +1,18 @@
 #!/bin/bash
 
-# 1. Automatically find your Logitech mouse name
-# This grabs the first device name from 'ratbagctl list'
-MOUSE_NAME=$(ratbagctl list | cut -f1 -d:)
+COLOR=$(sed -n '7p' ~/.cache/wal/colors | tr -d '#')
 
-if [ -z "$MOUSE_NAME" ]; then
-    echo "No mouse detected by ratbagctl."
-    exit 1
+BRIGHTNESS=128
+
+# Mouse
+MOUSE=$(ratbagctl list | head -n1 | cut -d':' -f1)
+
+if [ -n "$MOUSE" ]; then
+    ratbagctl "$MOUSE" led 0 set color "$COLOR"
+    ratbagctl "$MOUSE" led 1 set color "$COLOR"
 fi
 
-# 2. Extract Color6 from pywal and strip the '#'
-COLOR6=$(sed -n '7p' ~/.cache/wal/colors | sed 's/#//g')
+# Keyboard
+#openrgb --device 1 --mode direct --color "$COLOR" --brightness $BRIGHTNESS
 
-# 3. Apply color to both common LED zones
-# ratbagctl <device> led <index> set color <RRGGBB>
-ratbagctl "$MOUSE_NAME" led 0 set color "$COLOR6"
-ratbagctl "$MOUSE_NAME" led 1 set color "$COLOR6"
-
-echo "Piper/ratbagctl synced $MOUSE_NAME LEDs to #$COLOR6"
+#echo "RGB synced to #$COLOR at brightness $BRIGHTNESS"

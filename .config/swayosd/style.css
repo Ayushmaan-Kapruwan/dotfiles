@@ -1,9 +1,9 @@
 @import url("colors-waybar.css");
 
 window#osd {
-  background: alpha(@color0, 0.6);
+  background: alpha(@color0, 0.4);
   border-radius: 15px;
-  border: none;
+  border: 1px solid @color6;
 }
 
 #container {
