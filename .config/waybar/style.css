@@ -16,7 +16,7 @@ window#waybar {
   background-color: alpha(@color0, 0.7);
   padding: 0;
   margin: 0;
-  border: 0;
+  border: 0px solid @color6;
   border-radius: 0px;
 }
 
@@ -36,19 +36,21 @@ window#waybar {
 }
 #custom-volume.muted {
   color: @color0;
-  background-color: @color6
+  background-color: @color6;
 }
 
 #backlight {
   color: @color6;
 }
 
-#battery{
+#battery {
   color: @color6;
+  margin: 4px 6px 10px 6px;
 }
 #custom-power {
   color: @color6;
   border: 0px;
+  margin: 10px 6px 4px 6px;
 }
 #mpris {
   color: @color6;
@@ -58,39 +60,38 @@ window#waybar {
   color: @color6;
 }
 
-#bluetooth
-#workspaces {
-	background: @color6;
-	border-radius: 0px;
-	padding: 0;
-	margin: 0;
-	font-weight: normal;
-	font-style: normal;
-	opacity: 1;
-	font-size: 1px;
+#bluetooth #workspaces {
+  background: @color6;
+  border-radius: 0px;
+  padding: 0;
+  margin: 0;
+  font-weight: normal;
+  font-style: normal;
+  opacity: 1;
+  font-size: 1px;
 }
 #workspaces button {
-	padding: 1px 1px;
-	margin: 1px 1px;
-	border-radius: 6px;
-	color: @color6;
-	background-color: @background;
-	transition:  all 0.3s ease-in-out;
-	font-size: 1px;
-	opacity: 0.5;
+  padding: 1px 1px;
+  margin: 1px 1px;
+  border-radius: 6px;
+  color: @color6;
+  background-color: @background;
+  transition: all 0.3s ease-in-out;
+  font-size: 1px;
+  opacity: 0.5;
 }
 #workspaces button:hover {
-	background-color: @background;
-	border-radius: 6px;
-	min-height: 40px;
+  background-color: @background;
+  border-radius: 6px;
+  min-height: 40px;
 }
 #workspaces button.active {
-	padding:1px 1px;
-	margin: 1px 1px;
-	border-radius: 6px;
-	background-color:@color0;
-	transition: all 0.3s ease-in-out;
-	opacity: 1.0;
+  padding: 1px 1px;
+  margin: 1px 1px;
+  border-radius: 6px;
+  background-color: @color0;
+  transition: all 0.3s ease-in-out;
+  opacity: 1;
 }
 
 #battery.charging,
@@ -104,18 +105,18 @@ window#waybar {
   color: @color6;
 }
 #battery.warning:not(.charging) {
-  color: #CEA273;
+  color: #cea273;
 }
 #battery.critical:not(.charging) {
-  color: #A4133C;
+  color: #a4133c;
 }
 
 #battery.critical:not(.charging) {
-    animation: blink 0.60s linear infinite alternate;
+  animation: blink 0.6s linear infinite alternate;
 }
 
 @keyframes blink {
   to {
-        color: #F5EFEB;
+    color: #f5efeb;
   }
 }

@@ -32,7 +32,7 @@ fi
   cp ~/.cache/wal/colors.qml ~/.config/quickshell/Colors.qml  #quickshell
 
 update_rofi_bg() {
-    local alpha="0.5"
+    local alpha="0.6"
     local wal_colors="$HOME/.cache/wal/colors.json"
     local rofi_rasi="$HOME/.config/rofi/config.rasi"
 

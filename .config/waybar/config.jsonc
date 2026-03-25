@@ -2,7 +2,7 @@
   "layer": "top",
   "position": "left",
   "reload_style_on_change": true,
-  "width": 24,
+  "width": 44,
   "style": "~/.config/waybar/style.css",
   "margin-left": 0,
   "margin-right": 0,
@@ -10,7 +10,7 @@
   "margin-bottom": 0,
   "spacing": 0,
   "gtk-layer-shell": true,
-  "output": "eDP-1",
+  "output": ["HDMI-A-1", "eDP-1"],
 
 
   "modules-left": [
