@@ -7,6 +7,7 @@ fi
 
 # ---- Restore Hyprland effects ----
 hyprctl keyword general:allow_tearing false
+hyprctl keyword misc:vrr false
 hyprctl reload
 #hypridle &
 bash ~/.config/waybar/scripts/toggle-waybar.sh

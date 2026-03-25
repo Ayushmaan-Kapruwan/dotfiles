@@ -10,6 +10,8 @@ fi
 hyprctl keyword animations:enabled false
 hyprctl keyword decoration:blur:enabled false
 hyprctl keyword decoration:shadow:enabled false
+hyprctl keyword general:allow_tearing true
+hyprctl keyword misc:vrr true
 hyprctl keyword misc:vrr true
 #hyprctl keyword general:allow_tearing 1
 
